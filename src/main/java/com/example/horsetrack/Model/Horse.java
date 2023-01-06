@@ -1,15 +1,13 @@
 package com.example.horsetrack.Model;
 
-import com.example.horsetrack.Modifiers.Modifier;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table
 @Getter
 @Setter
 @RequiredArgsConstructor
@@ -17,11 +15,10 @@ import java.util.List;
 public class Horse {
 
     @Id
-    String name;
-    @NonNull Integer age;
-    @NonNull Double speed;
-
-    @ElementCollection
-    List<Modifier> modifierList = new ArrayList<Modifier>();
+    private String name;
+    @NonNull
+    private int age;
+    @NonNull
+    private double speed;
 
 }
